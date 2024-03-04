@@ -1,0 +1,98 @@
+#1 
+#A -
+classificacao = ["Brasil", "Alemanha", "Argentina", "França", "Espanha"]
+
+# Apenas os 3 primeiros colocados
+tres_primeiros = classificacao[:3]
+
+print("Classificação completa:")
+for posicao, time in enumerate(classificacao, start=1):
+    print(f"{posicao}. {time}")
+
+print("\nOs 3 primeiros colocados:")
+for posicao, time in enumerate(tres_primeiros, start=1):
+    print(f"{posicao}. {time}")
+
+#B
+classificacao = ["Brasil", "Alemanha", "Argentina", "França", "Espanha"]
+ 
+# Os 2 últimos colocados
+dois_ultimos = classificacao[-2:]
+ 
+print("Classificação completa:")
+for posicao, time in enumerate(classificacao, start=1):
+    print(f"{posicao}. {time}")
+ 
+print("\nOs 2 últimos colocados:")
+for posicao, time in enumerate(dois_ultimos, start=len(classificacao)-1):
+    print(f"{posicao}. {time}")
+
+#C
+classificacao = ["Brasil", "Alemanha", "Argentina", "França", "Espanha"]
+ 
+# Classificação em ordem alfabética
+classificacao_alfabetica = sorted(classificacao)
+ 
+print("Classificação completa:")
+for posicao, time in enumerate(classificacao, start=1):
+    print(f"{posicao}. {time}")
+ 
+print("\nClassificação em ordem alfabética:")
+for posicao, time in enumerate(classificacao_alfabetica, start=1):
+    print(f"{posicao}. {time}")
+
+#D
+classificacao = ["Brasil", "Alemanha", "Argentina", "França", "Espanha", "Barcelona"]
+ 
+# Encontrar a posição do Barcelona
+posicao_barcelona = classificacao.index("Barcelona") + 1
+ 
+print("Classificação completa:")
+for posicao, time in enumerate(classificacao, start=1):
+    print(f"{posicao}. {time}")
+ 
+print(f"\nO Barcelona está na posição {posicao_barcelona} da tabela.")
+
+#2
+# Conjunto de modelos da Loja A
+loja_A = {"iPhone 13", "Samsung Galaxy S21", "Google Pixel 6", "OnePlus 9"}
+ 
+# Conjunto de modelos da Loja B
+loja_B = {"Samsung Galaxy S21", "OnePlus 9", "Xiaomi Mi 11", "Google Pixel 6"}
+ 
+# Todos os modelos disponíveis (união dos conjuntos)
+todos_os_modelos = loja_A.union(loja_B)
+ 
+# Modelos disponíveis em ambas as lojas (interseção dos conjuntos)
+modelos_em_ambas_as_lojas = loja_A.intersection(loja_B)
+ 
+# Mostrar resultados
+print("Modelos disponíveis na Loja A:", loja_A)
+print("Modelos disponíveis na Loja B:", loja_B)
+ 
+print("\nTotal de modelos disponíveis para compra se visitar ambas as lojas:", todos_os_modelos)
+print("Modelos disponíveis em ambas as lojas:", modelos_em_ambas_as_lojas)
+
+#3
+# Função para determinar a situação do aluno com base na média
+def determinar_situacao(media):
+    return 'AP' if media >= 60 else 'RP'
+ 
+# Dicionário para armazenar informações dos alunos
+alunos = {}
+ 
+# Número de alunos que deseja avaliar
+num_alunos = int(input("Quantos alunos você deseja avaliar? "))
+ 
+# Preenchendo o dicionário com informações dos alunos
+for _ in range(num_alunos):
+    nome = input("Digite o nome do aluno: ")
+    media = float(input(f"Digite a média de {nome}: "))
+    situacao = determinar_situacao(media)
+    # Adicionando informações ao dicionário
+    alunos[nome] = {'media': media, 'situacao': situacao}
+ 
+# Exibindo o conteúdo do dicionário
+print("\nConteúdo do dicionário:")
+for nome, info in alunos.items():
+    print(f"Nome: {nome}, Média: {info['media']}, Situação: {info['situacao']}")
