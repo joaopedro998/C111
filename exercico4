@@ -1,0 +1,70 @@
+1 - 
+import numpy as np
+
+array = np.linspace(0, 1, 21)
+
+print(array)
+
+2 - 
+import numpy as np
+
+array1 = np.arange(0, 52, 2)
+
+array2 = np.arange(100, 49, -2)
+
+concatenated_array = np.concatenate((array1, array2))
+
+sorted_array = np.sort(concatenated_array)
+
+print(sorted_array)
+
+3 -
+import numpy as np
+
+# Criar arrays de números pares
+array1 = np.arange(0, 52, 2)
+array2 = np.arange(100, 49, -2)
+
+concatenated_array = np.concatenate((array1, array2))
+
+sorted_array = np.sort(concatenated_array)[::-1]
+
+print(sorted_array)
+
+4- 
+import numpy as np
+
+array = np.linspace(0, 1, 21)
+print(array)
+
+array1 = np.arange(0, 52, 2)
+array2 = np.arange(100, 49, -2)
+concatenated_array = np.concatenate((array1, array2))
+print("Concatenated array antes de ordenar:", concatenated_array)
+
+concatenated_array_sorted = np.sort(concatenated_array)
+print("Array ordenado em ordem crescente:", concatenated_array_sorted)
+
+concatenated_array_sorted_desc = np.sort(concatenated_array)[::-1]
+print("Array ordenado em ordem decrescente:", concatenated_array_sorted_desc)
+
+matriz_uns = np.ones((3, 4))
+array_1d = matriz_uns.flatten()
+print("Array 1D:", array_1d)
+
+5 - 
+import numpy as np
+
+matriz = np.random.randint(0, 10, size=(4, 5))
+
+# Exibir a matriz gerada
+print("Matriz original:")
+print(matriz)
+
+linha = 2
+coluna = 3
+numero_extraido = matriz[linha, coluna]
+
+print("\nNúmero extraído da matriz na posição (2, 3):", numero_extraido)
+
+
