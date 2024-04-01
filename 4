@@ -1,0 +1,30 @@
+import pandas as pd
+
+# Carregar o DataSet
+data = pd.read_csv("space.csv")
+
+# 4.8.3 - Porcentagem de missões bem-sucedidas
+sucessos = data[data['Status Mission'] == 'Success']
+porcentagem_sucesso = (len(sucessos) / len(data)) * 100
+print(f"Porcentagem de missões bem-sucedidas: {porcentagem_sucesso:.2f}%")
+
+# 4.8.2 - Média de gastos de uma missão espacial com valores disponíveis (> 0)
+missões_com_gastos = data[data['Rocket Cost'].notnull() & (data['Rocket Cost'] > 0)]
+media_gastos_missão = missões_com_gastos['Rocket Cost'].mean()
+print(f"Média de gastos de uma missão espacial: ${media_gastos_missão:.2f}")
+
+# 4.8.4 - Quantidade de missões espaciais realizadas pelos Estados Unidos (EUA)
+missões_EUA = data[data['Country'] == 'USA']
+quantidade_missões_EUA = len(missões_EUA)
+print(f"Quantidade de missões espaciais realizadas pelos Estados Unidos (EUA): {quantidade_missões_EUA}")
+
+# 4.8.5 - Missão mais cara realizada pela SpaceX
+missão_mais_cara_SpaceX = data[data['Company Name'] == 'SpaceX'].nlargest(1, 'Rocket Cost')
+print("Missão mais cara realizada pela SpaceX:")
+print(missão_mais_cara_SpaceX[['Detail', 'Rocket Cost']])
+
+# 4.8.6 - Nome das empresas que já realizaram Missões Espaciais juntamente com suas respectivas quantidades de missões
+empresas_missões = data['Company Name'].value_counts()
+print("Empresas que realizaram Missões Espaciais e suas quantidades de missões:")
+for empresa, quantidade in empresas_missões.items():
+    print(f"{empresa}: {quantidade} missões")
